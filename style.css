@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar ul {
+  list-style: none;
+}
+
+#navbar ul li {
+  /* Color only effect LIs that is not linked */
+  color: #333;
+  /* We want all LIs as inline-block elements */
+  display: inline-block;
+  padding: 1rem;
+  /* dropdown menu will set as display:absolute 
+  related to top LIs which need to set postion as relative */
+  position: relative;
+}
+
+#navbar ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Hide nested ul by default */
+#navbar ul li ul {
+  display: none;
+}
+
+/* By default mouse doesn't change to pointer 
+on nested ULs */
+#navbar ul li:hover {
+  cursor: pointer;
+  background: coral;
+  /* Color does not show on the Links just shows
+  on the text */
+  color: #fff;
+}
+
+/* For changing a color on the link
+we have to target it seperatly */
+#navbar ul li:hover a {
+  color: #fff;
+}
+
+/* Nested drpdown show */
+#navbar ul li:hover ul {
+  position: absolute;
+  display: block;
+  width: 200px;
+  margin-top: 1rem;
+  left: 0;
+}
+
+/* Dropdown menu doesn't have a background yet */
+#navbar ul li:hover ul li {
+  display: block;
+  background: #e7e7e7;
+}
+
+#navbar ul li:hover ul li a {
+  color: #333;
+}
