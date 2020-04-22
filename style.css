@@ -1,3 +1,8 @@
+:root {
+  --primary-color: coral;
+  --secondary-color: chocolate;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -39,7 +44,7 @@ body {
 on nested ULs */
 #navbar ul li:hover {
   cursor: pointer;
-  background: coral;
+  background: var(--primary-color);
   /* Color does not show on the Links just shows
   on the text */
   color: #fff;
@@ -68,4 +73,54 @@ we have to target it seperatly */
 
 #navbar ul li:hover ul li a {
   color: #333;
+}
+
+#navbar ul li:hover ul li:hover {
+  background: #e0e0e0;
+  color: inherit;
+}
+
+#navbar ul li:hover ul li span {
+  background: var(--primary-color);
+  color: #fff;
+  float: right;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+#navbar ul li:hover ul li:hover span {
+  background: var(--secondary-color);
+}
+
+#showcase {
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-color);
+  align-items: center;
+  height: 300px;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+#showcase h1 {
+  color: #fff;
+  font-size: 4rem;
+}
+
+@media(max-width: 600px) {
+  #navbar ul li {
+    display: block;
+  }
+
+  /* nested ul is over other contents becuase 
+  its position: absolute | we need to change it
+  for mobile screen | also for this reason we
+  need to change its width as well*/
+  #navbar ul li:hover ul {
+    width: 100%;
+    position: relative;
+  }
 }
